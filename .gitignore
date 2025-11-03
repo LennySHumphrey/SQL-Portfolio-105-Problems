@@ -1,0 +1,16 @@
+# PostgreSQL
+*.log
+*.sql~
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Temporary files
+*~
+.cache/
