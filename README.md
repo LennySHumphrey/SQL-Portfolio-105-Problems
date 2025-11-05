@@ -245,7 +245,7 @@ Created as a comprehensive SQL learning resource and technical portfolio piece. 
 **Your Name**  
 📧 humphreysuccess4@gmail.com 
 💼 [LinkedIn](https://www.linkedin.com/in/lenny-humphrey-73217b339)
-🔗 [Portfolio](in the works)
+🔗 [Portfolio](.)
 
 ---
 
