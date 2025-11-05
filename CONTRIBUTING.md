@@ -1,4 +1,4 @@
-# Contributing to SQL Mastery: 105 Problems
+# Contributing to SQL Portfolio: 105 Problems
 
 Thank you for your interest in improving this SQL learning resource! 
 

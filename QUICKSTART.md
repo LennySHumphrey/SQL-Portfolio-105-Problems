@@ -1,12 +1,12 @@
-# Quick Start Guide
+# Quick Start Guide - SQL Portfolio: 105 Problems
 
-Get up and running with SQL Mastery in 5 minutes.
+Get up and running with SQL Portfolio in 5 minutes.
 
 ---
 
 ## Prerequisites
 
-- **PostgreSQL 12+** installed ([Download](https://www.postgresql.org/download/))
+- **PostgreSQL 15+** installed ([Download](https://www.postgresql.org/download/))
 - **psql** command-line tool OR any PostgreSQL client (pgAdmin, DBeaver, DataGrip)
 - Basic SQL knowledge (for Basics section)
 
@@ -36,6 +36,7 @@ CREATE DATABASE ecommerce_practice;
 ```sql
 -- In psql, load the schema
 \i 00-Database-Schema/schema.sql
+-- If you want you can also copy and load the tables individually. If you use psql in VS Code, this is the best option for you 
 
 -- Verify tables loaded
 \dt
@@ -234,4 +235,4 @@ Create a simple checklist:
 
 **Happy Learning! 🎉**
 
-Remember: The goal isn't to finish fast—it's to build deep understanding.
+Remember: The goal isn't to finish fast, it's to build deep understanding.

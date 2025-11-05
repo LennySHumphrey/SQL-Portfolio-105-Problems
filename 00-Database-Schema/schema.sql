@@ -7,10 +7,9 @@
 CREATE TABLE Departments (
     Department_ID INT PRIMARY KEY,
     Department_Name VARCHAR(50) NOT NULL,
-    Location VARCHAR(50)
+    Department_Location VARCHAR(50)
 );
-ALTER TABLE Departments
-RENAME COLUMN  Location TO Department_Location
+
 
 CREATE TABLE Employees (
     Employee_ID INT PRIMARY KEY,
@@ -42,6 +41,7 @@ CREATE TABLE Categories(
     Category_Name VARCHAR(50)
 ); 
 
+
 CREATE TABLE Products(
     Product_ID INT PRIMARY KEY,
     SKU VARCHAR(50) UNIQUE, --SKU = Stock Keeping Unit
@@ -49,18 +49,20 @@ CREATE TABLE Products(
     Category_ID INT,
     FOREIGN KEY (Category_ID) REFERENCES Categories (Category_ID),
     Price DECIMAL (10, 2) NOT NULL,
-    Tags VARCHAR(50)
+    Tags VARCHAR(50),
+    Specs  JSONB
 );
-    ALTER TABLE Products
-    ADD COLUMN Specs  JSONB-- e.g., {"color":"black","weight_g":1200}
 
 
 --Suppliers And Product Suppliers 
-CREATE TABLE Suppliers(
+CREATE TABLE Suppliers
+(
     Supplier_ID INT PRIMARY KEY,
     Supplier_Name VARCHAR(50) NOT NULL,
     Supplier_Country VARCHAR(50)
 );
+
+
 CREATE TABLE Product_Suppliers(
     Supplier_ID INT,
     FOREIGN KEY (Supplier_ID) REFERENCES Suppliers(Supplier_ID),
@@ -125,6 +127,8 @@ CREATE TABLE Warehouses(
     Warehouse_Location VARCHAR (50),
     Capacity INT 
 );
+
+
 CREATE TABLE Inventory(
     Product_ID INT,
     FOREIGN KEY (Product_ID) REFERENCES Products(Product_ID),
@@ -137,7 +141,7 @@ CREATE TABLE Inventory(
 
 
 --Reviews
--- NOTE: The 'Rating' column must be an integer between 1 and 5 (enforced by CHECK constraint).
+-- NOTE: The 'Rating' column must be an integer between 1 and 5 (enforced by CHECK constraint). Just a reminder.
 CREATE TABLE Reviews(
     Review_ID INT PRIMARY KEY,
     Product_ID INT NOT NULL,
@@ -280,7 +284,7 @@ VALUES
 
 
 -- Products (tags and specs JSON)
-INSERT INTO Products (Product_ID, SKU, Product_Name, category_id,price,tags,specs) 
+INSERT INTO Products (Product_ID, SKU, Product_Name, category_id, price, tags, specs) 
 VALUES
 (1, 'SKU-001','Laptop Pro',1,4200.00,ARRAY['laptop','pro','work'],'{"ram_gb":16,"weight_g":2000}'),
 (2, 'SKU-002','Smartphone X',2,500.00,ARRAY['phone','mobile'],'{"screen_in":6.1,"battery_mah":3000}'),
@@ -672,17 +676,6 @@ VALUES
 (18, 9,70,'2023-01-01'),
 (19, 10,160,'2024-07-01'),
 (20, 10,150,'2023-01-01');
-
-
-
---Below are a list of columns I altered after creating the tables to add more complexity and ease of addressing the practice problems. Execute these statements AFTER creating your own tables.
-
-ALTER TABLE Departments
-RENAME COLUMN  Location TO Department_Location;
-
-ALTER TABLE Products
-ADD COLUMN Specs  JSONB-- e.g., {"color":"black","weight_g":1200}
-----Side Note: Feel free to adjust data types and constraints as needed based on specific requirements. If you wish for me to add more data or modify the dataset or even create another set of practice problems, let me know! :)
 
 
 -- End of Script 

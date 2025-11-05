@@ -181,7 +181,7 @@ FROM orders;
 
 ### **5. Bulk Operations & Safe Migrations**
 
-**Business Problem**: We need to update 10 million rows. How do we avoid locking the table for hours?
+**Business Problem**: We need to update, for example, 10 million rows. How do we avoid locking the table for hours?
 
 **Relevant Problems**:
 

@@ -1,4 +1,4 @@
-# SQL Mastery: 105 Problems from Basics to Production-Ready Queries
+# SQL Portfolio: 105 Problems from Basics to Production-Ready Queries
 
 
 A comprehensive SQL learning resource built around a realistic e-commerce database with 15+ interconnected tables. This repository demonstrates SQL proficiency from foundational queries to advanced database optimization techniques used in production environments.
@@ -151,7 +151,7 @@ ORDER BY total_spent DESC NULLS LAST
 LIMIT 5;
 ```
 
-*Top 5 customers by spending - actual output from the database* --> c:\Users\Success\Pictures\Screenshots\Screenshot 2025-11-02 084330.png
+*Top 5 customers by spending - actual output from the database* c:\Users\Success\Pictures\Screenshots\Screenshot 2025-11-02 084330.png
 
 
 ### **For Interview Prep:**
@@ -244,7 +244,7 @@ Created as a comprehensive SQL learning resource and technical portfolio piece. 
 
 **Your Name**  
 📧 humphreysuccess4@gmail.com 
-💼 [LinkedIn](https://medium.com/@humphreysuccess4)  
+💼 [LinkedIn](https://www.linkedin.com/in/lenny-humphrey-73217b339)
 🔗 [Portfolio](in the works)
 
 ---
