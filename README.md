@@ -242,7 +242,7 @@ Created as a comprehensive SQL learning resource and technical portfolio piece. 
 
 ## 📬 Contact & Feedback
 
-**Your Name**  
+**Lenny Success Humphrey**  
 📧 humphreysuccess4@gmail.com 
 💼 [LinkedIn](https://www.linkedin.com/in/lenny-humphrey-73217b339)
 🔗 [Portfolio](.)
