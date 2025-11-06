@@ -74,7 +74,7 @@ FROM Orders
 
 ---- B10 Compute average order value 
 SELECT 
-    TRIM_SCALE(AVG(Total_Amount)) AS Average_Order_Value  --TRIM_SCALE for removing trailing zeros. TRIM_SCALE may not exist in all PostGres installs, check your version
+    TRIM_SCALE(AVG(Total_Amount)) AS Average_Order_Value  --TRIM_SCALE for removing trailing zeros. TRIM_SCALE may not exist in all PostGres installs, check your version. Also use ROUND() if TRIM_SCALE is unavailable or you want to round to a specific decimal place.
 FROM Orders 
 
 

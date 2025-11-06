@@ -30,10 +30,11 @@ Revenue analytics drive strategic decisions around pricing, product mix, market 
 
 **Key Metrics Dashboard**:
 ```
-Total Revenue:     $X,XXX
-Average Order:     $XXX
-Total Orders:      XX
-Conversion Rate:   X%
+Total Revenue:     $39,385.00
+Average Order:     $1,064.45
+Total Orders:      36
+Total Visitors:    40
+Conversion Rate:   90%
 ```
 
 ---
