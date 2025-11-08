@@ -1,26 +1,111 @@
-# Quick Start Guide - SQL Portfolio: 105 Problems
+# Quick Start Guide
 
-Get up and running with SQL Portfolio in 5 minutes.
+Get up and running with SQL Mastery in 5 minutes.
 
 ---
 
 ## Prerequisites
 
 - **PostgreSQL 15+** installed ([Download](https://www.postgresql.org/download/))
-- **psql** command-line tool OR any PostgreSQL client (pgAdmin, DBeaver, DataGrip)
+- **VS Code** with SQLTools extension OR **psql** command-line tool OR any PostgreSQL client (pgAdmin, DBeaver, DataGrip) ([Download](https://code.visualstudio.com/Download))
 - Basic SQL knowledge (for Basics section)
 
 ---
 
 ## 🚀 5-Minute Setup
 
-### Step 1: Clone the Repository
+Choose your preferred method:
+
+### **METHOD A: Using VS Code (Recommended for Beginners)**
+
+#### Step 1: Install Extensions
+1. Open VS Code
+2. Go to Extensions (Ctrl+Shift+X or Cmd+Shift+X)
+3. Search and install:
+   - **SQLTools** by Matheus Teixeira
+   - **SQLTools PostgreSQL/Cockroach Driver** by Matheus Teixeira
+
+#### Step 2: Clone the Repository
+```bash
+git clone https://github.com/LennySHumphrey/SQL-Portfolio-105-Problems.git
+cd SQL-Portfolio-105-Problems
+```
+Or download ZIP from GitHub and extract.
+
+#### Step 3: Create Database Connection
+1. In VS Code, click the **SQLTools icon** in left sidebar (looks like a database)
+2. Click **"Add New Connection"**
+3. Select **PostgreSQL**
+4. Fill in:
+   - **Connection name**: `sql_practice`
+   - **Server**: `localhost`
+   - **Port**: `5432`
+   - **Database**: `postgres` (we'll create ecommerce_practice next)
+   - **Username**: `postgres`
+   - **Password**: [your PostgreSQL password]
+5. Click **"Test Connection"** → Should show success ✅
+6. Click **"Save Connection"**
+
+#### Step 4: Create Database
+1. In SQLTools sidebar, right-click your connection → **"New SQL File"**
+2. Type and run:
+```sql
+CREATE DATABASE ecommerce_practice;
+```
+3. Click **"Run on active connection"** (or press Ctrl+E Ctrl+E)
+
+#### Step 5: Switch to New Database
+1. In SQLTools sidebar, click your connection
+2. Click **"Edit Connection"**
+3. Change **Database** from `postgres` to `ecommerce_practice`
+4. Save and reconnect
+
+#### Step 6: Load Schema
+1. Open file: `00-Database-Schema/schema.sql`
+2. **Select all text** (Ctrl+A or Cmd+A)
+3. **Right-click** → **"Run Selected Query"**
+   - OR press **Ctrl+E Ctrl+E** (Windows) / **Cmd+E Cmd+E** (Mac)
+4. Wait 5-10 seconds for all tables to load
+
+#### Step 7: Verify Setup
+Run this query:
+```sql
+-- Check tables loaded
+SELECT table_name 
+FROM information_schema.tables 
+WHERE table_schema = 'public' 
+ORDER BY table_name;
+
+-- Check row counts
+SELECT 'Customers' AS table_name, COUNT(*) FROM customers
+UNION ALL SELECT 'Products', COUNT(*) FROM products
+UNION ALL SELECT 'Orders', COUNT(*) FROM orders;
+```
+
+**Expected Output:**
+```
+ table_name | count 
+------------|-------
+ Customers  |    35
+ Products   |    20
+ Orders     |    37
+```
+
+✅ **You're ready!** Open `01-Basics/basics-problems.sql` and start solving.
+
+Frankly VS Code is recommended for all levels of mastery in SQL because it allows ease of convenience like sharing and collaborating via GitHub and with documentation files like markdowns.
+
+---
+
+### **METHOD B: Using Command Line (psql)**
+
+#### Step 1: Clone the Repository
 ```bash
 git clone https://github.com/LennySHumphrey/SQL-Portfolio-105-Problems.git
 cd SQL-Portfolio-105-Problems
 ```
 
-### Step 2: Create Database
+#### Step 2: Create Database
 ```bash
 # Open psql
 psql -U postgres
@@ -32,11 +117,10 @@ CREATE DATABASE ecommerce_practice;
 \c ecommerce_practice
 ```
 
-### Step 3: Load Schema
+#### Step 3: Load Schema
 ```sql
 -- In psql, load the schema
 \i 00-Database-Schema/schema.sql
--- If you want you can also copy and load the tables individually. If you use psql in VS Code, this is the best option for you 
 
 -- Verify tables loaded
 \dt
@@ -113,7 +197,7 @@ SELECT * FROM customers LIMIT 5;
 
 ---
 
-## 🔧 Useful psql Commands
+## 🔧 Useful psql Commands 
 
 ```sql
 \dt                    -- List all tables
@@ -139,6 +223,8 @@ Modify queries to see what happens:
 - Add more WHERE conditions
 - Change GROUP BY columns
 - Try different JOIN types
+
+Explore as much as you can on your journey.
 
 ### 4. **Use EXPLAIN**
 ```sql
@@ -196,7 +282,7 @@ Create a simple checklist:
 
 ```markdown
 ### Basics (B1-B35)
-- [x] B1-B10 (Completed: 2025-01-15)
+- [x] B1-B10 (Completed: 2025-11-15)
 - [ ] B11-B20
 - [ ] B21-B30
 - [ ] B31-B35
@@ -235,4 +321,4 @@ Create a simple checklist:
 
 **Happy Learning! 🎉**
 
-Remember: The goal isn't to finish fast, it's to build deep understanding.
+Remember: The goal isn't to finish fast—it's to build deep understanding.
